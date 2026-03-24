@@ -1,6 +1,6 @@
 import React from "react";
 
-const herosection = () => {
+const HeroSection = () => {
   return (
     <>
       <section
@@ -247,4 +247,4 @@ const herosection = () => {
   );
 };
 
-export default herosection;
+export default HeroSection;
