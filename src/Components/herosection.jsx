@@ -200,7 +200,7 @@ const HeroSection = () => {
                   "0 30px 80px rgba(201,168,76,0.2), inset 0 0 60px rgba(201,168,76,0.05)",
               }}>
               <img
-                src="https://images.unsplash.com/photo-1601121141461-9d6647bef0a0?w=600&q=80"
+                src="https://i.pinimg.com/736x/02/2a/fc/022afca81f24dffce05974f2310fc08f.jpg"
                 alt="Tanishaq Jewellery"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

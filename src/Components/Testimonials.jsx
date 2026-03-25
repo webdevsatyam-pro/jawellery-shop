@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { testimonials } from "./data";
 const Testimonials = () => {
   const [active, setActive] = useState(0);
 

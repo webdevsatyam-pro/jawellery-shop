@@ -1,4 +1,5 @@
 import React from "react";
+import { collections } from "./data";
 
 const Collectionsgrid = () => {
   return (
