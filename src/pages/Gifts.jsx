@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const giftItems = [
   {
@@ -73,7 +73,7 @@ const Gifts = () => {
         <div className="bg-[#fdf2f2] py-16 px-4 border-b border-pink-100">
           <div className="container mx-auto text-center">
             <div className="flex justify-center mb-4">
-              <Gift className="text-[#83272d] w-10 h-10" />
+              <Gifts className="text-[#83272d] w-10 h-10" />
             </div>
             <h1 className="text-4xl md:text-5xl font-serif text-[#83272d] mb-4">
               The Art of Gifting

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Link import karna na bhulein
 import { navLinks } from "./data";
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -8,6 +10,7 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <>
       <nav
@@ -32,9 +35,15 @@ const Navbar = () => {
             justifyContent: "space-between",
             height: "72px",
           }}>
-          {/* Logo */}
-          <div
-            style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+          {/* Logo - Ispe click karne se bhi Home page pe jayega */}
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              flexDirection: "column",
+              lineHeight: 1,
+            }}>
             <span
               className="gold-text"
               style={{
@@ -55,9 +64,9 @@ const Navbar = () => {
               }}>
               Fine Jewellery
             </span>
-          </div>
+          </Link>
 
-          {/* Nav Links */}
+          {/* Nav Links - Array se map ho raha hai */}
           <div
             style={{
               display: "flex",
@@ -66,16 +75,20 @@ const Navbar = () => {
               letterSpacing: "1px",
             }}>
             {navLinks.map((link) => (
-              <span
+              <Link
                 key={link}
+                // LOGIC: Agar link "Home" hai to "/", nahi to "/link-ka-naam"
+                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
                 className="nav-link"
                 style={{
                   color: "#f5e6c8",
                   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "15px",
+                  textDecoration: "none", // Default underline hatane ke liye
+                  transition: "color 0.3s ease",
                 }}>
                 {link}
-              </span>
+              </Link>
             ))}
           </div>
 
@@ -88,6 +101,7 @@ const Navbar = () => {
               fontSize: "13px",
               letterSpacing: "2px",
               fontFamily: "'Playfair Display', serif",
+              cursor: "pointer",
             }}>
             BOOK VISIT
           </button>
